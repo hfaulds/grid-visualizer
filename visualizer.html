@@ -1,0 +1,26 @@
+<html data-ng-app  data-ng-controller='VisualizerController'>
+  <head>
+    <script src='/socket.io/socket.io.js'></script>
+    <script src='angular.min.js'></script>
+    <script src='visualizer_controller.js'></script>
+    <style>
+      .cell {
+        position: absolute;
+        background-color:black;
+        font-size:2px;
+        color:white;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-ng-repeat='cell in cells'
+      data-ng-init='cellSize=10'>
+      <div class='cell' style='top:{{cell.x*10}};
+                               left:{{cell.y*10}};
+                               width:{{cellSize}};
+                               height:{{cellSize}}'>
+        {{cell.x}},{{cell.y}}
+      </div>
+    </div>
+  </body>
+</html>
